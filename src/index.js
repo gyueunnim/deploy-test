@@ -34,12 +34,6 @@ getToken(messaging, { vapidKey: 'BI-_sWLOnaahPCqAvw8zFydQz1yR24QkOp817njCh_VWqLC
   console.log('FCM 토큰 가져오기 오류 : ', error);
 })
 
-onMessage(messaging, (payload) => {
-  console.log('Received foreground Message : ', payload.notification)
-  const { title, body } = payload.notification;
-  new Notification(title, { body })
-})
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

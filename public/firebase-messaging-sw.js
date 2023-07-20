@@ -23,4 +23,12 @@ const messaging = firebase.messaging();
 
 messaging.onBackgroundMessage((payload) => {
     console.log('Received background message ', payload.notification);
+    const notificationTitle = '삐용삐용';
+    const notificationOptions = {
+      body: '[중대본] 테스트 해보자~',
+      icon: './testlogo.png'
+    };
+  
+    self.registration.showNotification(notificationTitle,
+      notificationOptions);
 })

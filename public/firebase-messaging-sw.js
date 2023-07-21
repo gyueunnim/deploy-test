@@ -32,3 +32,8 @@ messaging.onBackgroundMessage((payload) => {
     self.registration.showNotification(notificationTitle,
       notificationOptions);
 })
+
+self.addEventListener('notificationclick', (event) => {
+  // default: 알림 클릭 시 pwa 앱으로 이동
+  event.notification.close();
+});
